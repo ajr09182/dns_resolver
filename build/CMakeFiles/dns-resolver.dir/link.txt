@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/dns-resolver.dir/src/main.cpp.o" -o dns-resolver  libdns-resolver-lib.a /usr/lib/x86_64-linux-gnu/libPocoNet.so.80 /usr/lib/x86_64-linux-gnu/libPocoFoundation.so.80 /usr/lib/x86_64-linux-gnu/libpcre.so /usr/lib/x86_64-linux-gnu/libz.so -lpthread -ldl -lrt /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

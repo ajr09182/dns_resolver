@@ -1,0 +1,4 @@
+/home/ajrathor09182/dns-resolver/build/CMakeFiles/dns-resolver-lib.dir
+/home/ajrathor09182/dns-resolver/build/CMakeFiles/dns-resolver.dir
+/home/ajrathor09182/dns-resolver/build/CMakeFiles/edit_cache.dir
+/home/ajrathor09182/dns-resolver/build/CMakeFiles/rebuild_cache.dir

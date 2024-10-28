@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdns-resolver-lib.a "CMakeFiles/dns-resolver-lib.dir/src/DNSResolver.cpp.o" "CMakeFiles/dns-resolver-lib.dir/src/DNSCache.cpp.o" "CMakeFiles/dns-resolver-lib.dir/src/DNSQuery.cpp.o" "CMakeFiles/dns-resolver-lib.dir/src/ConnectionPool.cpp.o" "CMakeFiles/dns-resolver-lib.dir/src/Logger.cpp.o"
+/usr/bin/ranlib libdns-resolver-lib.a
