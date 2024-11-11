@@ -85,8 +85,11 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/bits/locale_facets.h \
   /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13/bits/localefwd.h \
   /usr/include/c++/13/bits/memory_resource.h \
   /usr/include/c++/13/bits/memoryfwd.h \
@@ -100,6 +103,7 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/quoted_string.h \
   /usr/include/c++/13/bits/random.h \
   /usr/include/c++/13/bits/random.tcc \
   /usr/include/c++/13/bits/range_access.h \
@@ -109,6 +113,7 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/c++/13/bits/shared_ptr_atomic.h \
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/specfun.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/std_mutex.h \
@@ -124,11 +129,14 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_list.h \
+  /usr/include/c++/13/bits/stl_map.h \
+  /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
@@ -172,12 +180,15 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/list \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/map \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
@@ -191,6 +202,7 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/c++/13/queue \
   /usr/include/c++/13/random \
   /usr/include/c++/13/ratio \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -220,6 +232,7 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/fcntl.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/libintl.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/falloc.h \
@@ -358,8 +371,10 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
   /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -392,7 +407,11 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
@@ -440,8 +459,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
@@ -449,8 +466,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
@@ -528,7 +543,19 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
-/usr/include/c++/13/bits/stl_numeric.h:
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
+/usr/include/x86_64-linux-gnu/asm/ioctls.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
@@ -548,6 +575,10 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/c++/13/cwctype:
+
 /usr/include/c++/13/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/13/bits/shared_ptr.h:
@@ -560,7 +591,13 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/bits/locale_facets.tcc:
 
+/usr/include/c++/13/iomanip:
+
 /usr/include/strings.h:
+
+/usr/include/c++/13/bits/quoted_string.h:
+
+/usr/include/c++/13/bits/unordered_map.h:
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
@@ -586,6 +623,12 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/time.h:
 
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/c++/13/bits/locale_facets_nonio.h:
+
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/c++/13/bits/locale_classes.h:
@@ -602,31 +645,35 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/bits/hashtable.h:
 
+/usr/include/c++/13/ratio:
+
+/home/ajrathor09182/dns-resolver/include/DNSCache.hpp:
+
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/c++/13/bits/node_handle.h:
+
+/usr/include/Poco/Net/SocketImpl.h:
+
+/usr/include/c++/13/bits/refwrap.h:
 
 /usr/include/c++/13/bits/fstream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
+/usr/include/c++/13/bits/locale_conv.h:
+
 /usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/c++/13/bits/stl_multimap.h:
 
 /usr/include/c++/13/bits/enable_special_members.h:
 
 /usr/include/Poco/Net/SocketDefs.h:
 
 /usr/include/c++/13/bits/deque.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/c++/13/bits/stl_pair.h:
-
-/usr/include/c++/13/cstdio:
-
-/usr/include/c++/13/fstream:
 
 /usr/include/c++/13/bits/hashtable_policy.h:
 
@@ -678,17 +725,11 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/errno.h:
 
-/usr/include/c++/13/bits/refwrap.h:
-
-/usr/include/Poco/Net/SocketImpl.h:
-
 /usr/include/x86_64-linux-gnu/bits/uio-ext.h:
 
 /usr/include/c++/13/bits/random.h:
 
 /usr/include/c++/13/bits/atomic_futex.h:
-
-/usr/include/c++/13/bits/codecvt.h:
 
 /usr/include/c++/13/bits/this_thread_sleep.h:
 
@@ -712,10 +753,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /home/ajrathor09182/dns-resolver/include/DNSResolver.hpp:
 
-/usr/include/c++/13/bits/stl_raw_storage_iter.h:
-
-/usr/include/Poco/Foundation.h:
-
 /usr/include/c++/13/algorithm:
 
 /usr/include/c++/13/bits/stl_algo.h:
@@ -726,21 +763,15 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/tr1/poly_hermite.tcc:
 
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/home/ajrathor09182/dns-resolver/include/ConnectionPool.hpp:
+
 /home/ajrathor09182/dns-resolver/include/Logger.hpp:
-
-/usr/include/c++/13/bits/erase_if.h:
-
-/usr/include/c++/13/bits/stl_list.h:
-
-/usr/include/c++/13/debug/assertions.h:
 
 /usr/include/Poco/Platform_POSIX.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/c++/13/bits/charconv.h:
-
-/usr/include/Poco/Alignment.h:
+/usr/include/c++/13/bits/sstream.tcc:
 
 /usr/include/asm-generic/ioctls.h:
 
@@ -755,6 +786,10 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 /usr/include/Poco/Exception.h:
 
 /home/ajrathor09182/dns-resolver/include/DNSQuery.hpp:
+
+/usr/include/Poco/Foundation.h:
+
+/usr/include/c++/13/bits/stl_raw_storage_iter.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
@@ -810,6 +845,12 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/bits/exception_defines.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/math.h:
+
 /home/ajrathor09182/dns-resolver/include/Statistics.hpp:
 
 /usr/include/c++/13/ext/type_traits.h:
@@ -821,6 +862,20 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 /usr/include/Poco/AutoPtr.h:
 
 /usr/include/c++/13/tr1/ell_integral.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/Poco/Alignment.h:
+
+/usr/include/c++/13/bits/charconv.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/13/bits/stl_pair.h:
+
+/usr/include/c++/13/cstdio:
+
+/usr/include/c++/13/fstream:
 
 /usr/include/c++/13/bits/allocated_ptr.h:
 
@@ -842,9 +897,13 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/Poco/Types.h:
 
+/usr/include/c++/13/bits/stl_map.h:
+
 /usr/include/c++/13/bits/new_allocator.h:
 
 /usr/include/c++/13/bits/stl_uninitialized.h:
+
+/usr/include/c++/13/locale:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
@@ -878,10 +937,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
-/home/ajrathor09182/dns-resolver/include/ConnectionPool.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
 /usr/include/c++/13/bits/streambuf.tcc:
 
 /usr/include/c++/13/bits/specfun.h:
@@ -893,6 +948,20 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 /usr/include/Poco/Net/Socket.h:
 
 /usr/include/c++/13/tr1/poly_laguerre.tcc:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/13/bits/erase_if.h:
+
+/usr/include/c++/13/bits/stl_list.h:
+
+/usr/include/c++/13/debug/assertions.h:
+
+/usr/include/c++/13/bits/stl_numeric.h:
+
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/x86_64-linux-gnu/sys/socket.h:
 
@@ -910,8 +979,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/tr1/riemann_zeta.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/c++/13/bits/string_view.tcc:
@@ -919,8 +986,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 /usr/include/c++/13/bits/unique_lock.h:
 
 /usr/include/c++/13/mutex:
-
-/usr/include/c++/13/bits/unordered_map.h:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -936,9 +1001,11 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/c++/13/deque:
 
-/home/ajrathor09182/dns-resolver/include/DNSCache.hpp:
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/c++/13/ratio:
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
+/usr/include/c++/13/cwchar:
 
 /usr/include/c++/13/pstl/glue_memory_defs.h:
 
@@ -947,8 +1014,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 /usr/include/c++/13/ext/aligned_buffer.h:
 
 /usr/include/locale.h:
-
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/c++/13/new:
 
@@ -1014,6 +1079,10 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/stdint.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+/usr/include/c++/13/sstream:
+
 /usr/include/c++/13/stdexcept:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
@@ -1025,6 +1094,8 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 /usr/include/c++/13/string:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/include/c++/13/map:
 
 /usr/include/c++/13/string_view:
 
@@ -1062,8 +1133,6 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/features.h:
 
-/usr/include/x86_64-linux-gnu/asm/ioctls.h:
-
 /usr/include/linux/close_range.h:
 
 /usr/include/c++/13/debug/debug.h:
@@ -1092,32 +1161,8 @@ CMakeFiles/dns-resolver.dir/src/main.cpp.o: /home/ajrathor09182/dns-resolver/src
 
 /usr/include/stdlib.h:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/c++/13/cwchar:
-
-/usr/include/x86_64-linux-gnu/asm/socket.h:
-
 /usr/include/Poco/Timespan.h:
 
 /usr/include/string.h:
 
 /usr/include/unistd.h:
-
-/usr/include/c++/13/cwctype:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/math.h:
-
-/usr/include/x86_64-linux-gnu/asm/sockios.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
-
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
