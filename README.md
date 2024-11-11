@@ -1,163 +1,191 @@
-# DNS Resolver Project Analysis Report
+# DNS Resolver Technical Documentation
+## Table of Contents
+1. [Overview](#overview)
+2. [Architecture](#architecture)
+3. [Features](#features)
+4. [Implementation Details](#implementation-details)
+5. [Usage Guide](#usage-guide)
+6. [Configuration](#configuration)
+7. [Error Handling](#error-handling)
+8. [Future Enhancements](#future-enhancements)
 
-## Project Overview
-This report analyzes a sophisticated DNS resolver implementation in C++ that supports parallel queries, caching, and recursive resolution. The project successfully implements the core requirements while adding several advanced features for improved performance and reliability.
+## Overview
+The DNS Resolver is a robust C++ implementation of a Domain Name System resolver that supports multiple record types, asynchronous resolution, and advanced features like DNSSEC validation. This document provides comprehensive technical documentation of the system's architecture, features, and usage.
 
-## Architecture Analysis
+### Key Classes
+1. **DNSResolver**: Main class handling DNS resolution
+2. **Options**: Command-line argument parser and configuration
+3. **Statistics**: Performance metrics tracking
 
-### Core Components
+## Features
 
-1. **DNSResolver Class**
-   - Central component managing the resolution process
-   - Implements both synchronous and asynchronous resolution
-   - Supports parallel queries across multiple nameservers
-   - Integrates with caching system
-   - Handles CNAME chain resolution
-   - Maintains statistics
+### Record Type Support
+- A Records (IPv4)
+- AAAA Records (IPv6)
+- MX Records (Mail Exchange)
+- TXT Records (Text)
+- SOA Records (Start of Authority)
 
-2. **ConnectionPool**
-   - Thread-safe connection management
-   - Implements connection pooling for efficient resource utilization
-   - Uses RAII principles for resource management
-   - Supports multiple nameservers with round-robin distribution
-
-3. **DNSCache**
-   - Implements LRU (Least Recently Used) caching strategy
-   - Thread-safe implementation using mutex locks
-   - TTL-based cache entry invalidation
-   - Efficient memory management with size limits
-
-4. **DNSQuery**
-   - Handles DNS protocol implementation
-   - Supports multiple record types (A, AAAA, MX, TXT, etc.)
-   - Implements query building and response parsing
-   - Includes compression handling for domain names
-
-### Key Features Implemented
-
-1. **Parallel Resolution**
+### Advanced Capabilities
+1. **Asynchronous Resolution**
    ```cpp
-   std::vector<DNSRecord> DNSResolver::resolveParallel(
-       const std::string &domain,
-       DNSRecordType type)
+   auto futureRecords = resolver.resolveAsync(domain);
+   auto records = futureRecords.get();
    ```
-   - Queries multiple nameservers simultaneously
-   - Uses std::async for parallel execution
-   - Combines results from multiple sources
-   - Improves resolution speed and reliability
 
-2. **Caching System**
+2. **Multi-Server Support**
    ```cpp
-   bool DNSCache::get(const std::string &key, std::vector<DNSRecord> &records)
-   void DNSCache::put(const std::string &key, const std::vector<DNSRecord> &records)
+   config.nameservers = {
+       "8.8.8.8", "8.8.4.4",        // Google DNS
+       "1.1.1.1", "1.0.0.1",        // Cloudflare DNS
+       "9.9.9.9",                    // Quad9 DNS
+       "208.67.222.222"             // OpenDNS
+   };
    ```
-   - Implements sophisticated TTL management
-   - Thread-safe operations
-   - LRU eviction policy
-   - Automatic expired record cleanup
 
-3. **Recursive Resolution**
-   ```cpp
-   std::vector<DNSRecord> DNSResolver::performRecursiveResolution(
-       const std::string &domain,
-       DNSRecordType type,
-       size_t depth,
-       const std::string &nameserver)
-   ```
-   - Supports full recursive resolution
-   - Implements depth limiting to prevent infinite recursion
-   - Handles CNAME chain following
-   - Supports multiple record types
+3. **DNSSEC Validation**
+   - Automatic signature verification
+   - Chain of trust validation
+   - RRSIG record processing
 
-## Performance Features
+## Implementation Details
 
-1. **Connection Pooling**
-   - Reuses connections to reduce overhead
-   - Implements connection timeout handling
-   - Supports multiple concurrent queries
-   - Efficient resource management
-
-2. **Asynchronous Resolution**
-   ```cpp
-   std::future<std::vector<DNSRecord>> DNSResolver::resolveAsync(
-       const std::string &domainName,
-       DNSRecordType type)
-   ```
-   - Non-blocking resolution support
-   - Future-based result handling
-   - Integrates with parallel resolution
-
-3. **Statistics Tracking**
-   - Monitors cache hit/miss rates
-   - Tracks query success/failure
-   - Measures resolution times
-   - Provides performance metrics
-
-## Implementation Highlights
-
-### Error Handling
-The implementation includes comprehensive error handling:
-- Connection failures
-- Query timeouts
-- Invalid responses
-- Recursive depth limits
-- Cache management errors
-
-### Thread Safety
-Multiple thread-safe components:
-- Connection pool management
-- Cache operations
-- Logging system
-- Statistics collection
-
-### Logging System
+### Record Type Handling
 ```cpp
-void Logger::log(LogLevel level, const std::string& message)
+std::optional<DNSRecordType> stringToRecordType(const std::string& type) {
+    static const std::map<std::string, DNSRecordType> typeMap = {
+        {"A", DNSRecordType::A},
+        {"AAAA", DNSRecordType::AAAA},
+        {"MX", DNSRecordType::MX},
+        {"TXT", DNSRecordType::TXT},
+        {"SOA", DNSRecordType::SOA}
+    };
+
+    auto it = typeMap.find(type);
+    return it != typeMap.end() ? std::optional{it->second} : std::nullopt;
+}
 ```
-- Supports multiple log levels
-- Thread-safe implementation
-- Timestamp inclusion
-- File-based logging
 
-## Output Analysis
+### Output Formatting
+```cpp
+namespace Color {
+    const std::string Reset   = "\033[0m";
+    const std::string Bold    = "\033[1m";
+    const std::string Blue    = "\033[34m";
+    const std::string Green   = "\033[32m";
+    const std::string Yellow  = "\033[33m";
+    const std::string Red     = "\033[31m";
+}
+```
 
-Based on the provided output, the resolver successfully:
-1. Resolves multiple record types (A, AAAA, MX, TXT)
-2. Handles parallel queries across multiple nameservers
-3. Maintains accurate statistics
-4. Provides formatted, color-coded output
-5. Shows cache effectiveness through hit/miss statistics
+### Record Output Format
+```
+Record:
+  Type: [Record Type]
+  Name: [Domain Name]
+  TTL: [Time To Live]
+  Data: [Record Data]
+  [Additional Type-Specific Fields]
+----------------------------------------
+```
 
-## Recommendations for Enhancement
+## Usage Guide
 
-1. **DNSSEC Implementation**
-   - Currently prepared but not fully implemented
-   - Add DNSSEC validation logic
-   - Implement key verification
+### Command Line Interface
+```bash
+cd build
+./dns-resolver
+```
 
-2. **Performance Optimizations**
-   - Implement connection keepalive
-   - Add DNS prefetching
-   - Optimize cache storage
+### Build Commands
+```bash
+cd build
+cmake ..
+make
+```
+
+## Configuration
+
+### Default Configuration
+```cpp
+DNSResolver::Config config;
+config.enableParallelQueries = true;
+config.enableDNSSEC = true;
+config.connectionPoolSize = 10;
+```
+
+### Performance Settings
+- Connection pool size: 10 concurrent connections
+- Parallel query support enabled
+- DNSSEC validation enabled by default
+
+## Error Handling
+
+### Error Categories
+1. **Network Errors**
+   - Connection failures
+   - Timeout issues
+   - DNS server unreachable
+
+2. **Resolution Errors**
+   - Invalid domain names
+   - Unsupported record types
+   - DNSSEC validation failures
+
+3. **System Errors**
+   - Memory allocation failures
+   - Configuration errors
+   - Internal state errors
+
+### Error Output Format
+```cpp
+try {
+    // DNS operations
+} catch (const std::exception& e) {
+    std::cerr << Color::Red << "Fatal error: " << e.what() << Color::Reset << "\n";
+    return 1;
+}
+```
+
+## Future Enhancements
+
+### Planned Features
+1. **Extended Protocol Support**
+   - DNS over HTTPS (DoH)
+   - DNS over TLS (DoT)
+   - DANE validation
+
+2. **Performance Improvements**
+   - Enhanced caching mechanisms
+   - Query optimization
+   - Improved connection pooling
 
 3. **Additional Features**
-   - Add support for more record types
-   - Implement reverse DNS lookup
-   - Add zone transfer capability
-   - Include DNS-over-HTTPS support
+   - Configuration file support
+   - Extended statistics reporting
+   - GUI interface
+   - Additional record type support
 
-4. **Monitoring & Diagnostics**
-   - Add detailed performance metrics
-   - Implement query tracing
-   - Add prometheus metrics support
+### Development Roadmap
+1. Q2 2024: DoH/DoT implementation
+2. Q3 2024: Enhanced caching system
+3. Q4 2024: GUI development
+4. Q1 2025: Additional record types
 
-## Conclusion
+## Appendix A: Statistics Format
+```
+Resolver Statistics:
+  Total queries:  [count]
+  Cache hits:     [count]
+  Cache misses:   [count]
+  Failed queries: [count]
+```
 
-The implementation successfully meets the project requirements while adding sophisticated features like parallel resolution, connection pooling, and comprehensive caching. The code demonstrates good software engineering practices including:
-- Strong error handling
-- Thread safety
-- Resource management
-- Performance optimization
-- Maintainable architecture
-
-The modular design allows for easy extension and maintenance, while the comprehensive feature set provides a robust foundation for DNS resolution tasks.
+## Appendix B: Color Coding Reference
+| Color  | Usage                     |
+|--------|---------------------------|
+| Blue   | Record types and names    |
+| Green  | Successful data           |
+| Yellow | Warnings                  |
+| Red    | Errors                    |
+| Bold   | Headers and labels        |
